@@ -28,7 +28,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: Install tools & lint & Unit test
+          name: Run Unit test
           command: |
             pwd
   integration_test:
@@ -38,7 +38,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: Install tools & lint & Integration test
+          name: Run Integration test
           command: |
             pwd
 
@@ -49,7 +49,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: Install tools & lint & Functional test
+          name: Run Functional test
           command: |
             pwd
 
