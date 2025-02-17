@@ -76,6 +76,7 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               echo $GOOGLE_APPLICATION_CREDENTIALS > credentials.json
+              GOOGLE_APPLICATION_CREDENTIALS=credentials.json ./node_modules/.bin/firebase hosting:channel:deploy --project khiencct test_1 ;
               GOOGLE_APPLICATION_CREDENTIALS=credentials.json ./node_modules/.bin/firebase deploy --project khiencct;
             fi
           filters:
