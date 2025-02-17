@@ -20,7 +20,7 @@ jobs:
       - persist_to_workspace:
           root: ~/angular_circleci
           paths:
-            - message.txt
+            - src
       - run:
           name: Install tools & lint
           command: |
