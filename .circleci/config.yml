@@ -58,4 +58,5 @@ jobs:
 workflows:
   workflow:
     jobs:
+      - setup
       - build_and_deploy
