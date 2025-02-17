@@ -18,7 +18,7 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Install tools & lint & test
+          name: Install tools & lint
           command: |
             pwd
   unit_test:
