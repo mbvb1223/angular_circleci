@@ -21,24 +21,35 @@ jobs:
           name: Install tools & lint & test
           command: |
             pwd
-  unit_test_1:
+  unit_test:
     working_directory: ~/angular_circleci
     executor: default-executor
     steps:
       - attach_workspace:
           at: ~/
       - run:
-          name: Install tools & lint & test 1
+          name: Install tools & lint & Unit test
           command: |
             pwd
-  unit_test_2:
+  integration_test:
     working_directory: ~/angular_circleci
     executor: default-executor
     steps:
       - attach_workspace:
           at: ~/
       - run:
-          name: Install tools & lint & test 2
+          name: Install tools & lint & Integration test
+          command: |
+            pwd
+
+  functional_test:
+    working_directory: ~/angular_circleci
+    executor: default-executor
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Install tools & lint & Functional test
           command: |
             pwd
 
@@ -76,12 +87,17 @@ workflows:
   workflow:
     jobs:
       - setup
-      - unit_test_1:
+      - unit_test:
           requires:
             - setup
-      - unit_test_2:
+      - integration_test:
+          requires:
+            - setup
+      - functional_test:
           requires:
             - setup
       - build_and_deploy:
           requires:
-            - unit_test_1
+            - unit_test
+            - integration_test
+            - functional_test
