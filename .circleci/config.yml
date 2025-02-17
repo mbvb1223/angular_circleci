@@ -58,7 +58,7 @@ jobs:
     executor: default-executor
     steps:
       - attach_workspace:
-          at: ~/
+          at: ~/angular_circleci
       - run:
           name: Build project
           command: |
