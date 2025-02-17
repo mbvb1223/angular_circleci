@@ -34,10 +34,6 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Install tools & lint & test
-          command: |
-            pwd
-      - run:
           name: Build project
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
