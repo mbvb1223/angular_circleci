@@ -1,5 +1,5 @@
 {
-  "name": "angularv19",
+  "name": "angular_circleci",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
