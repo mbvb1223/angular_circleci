@@ -72,7 +72,7 @@ jobs:
               ./node_modules/.bin/ng build --aot --output-hashing=all --base-href='https://khiencct.web.app/';
             fi
       - run:
-          name: Deploy to Firebase
+          name: Deploy to Firebase.
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               echo $GOOGLE_APPLICATION_CREDENTIALS > credentials.json
